@@ -219,7 +219,7 @@ final class LightTypeTagInheritance(self: LightTypeTag, other: LightTypeTag) {
           RefinementDecl.TypeMember(ln, lref),
           RefinementDecl.TypeMember(rn, NameReference(SymName.SymTypeName(rn1), rBounds, None))
         ) if rn == rn1 =>
-      // we're comparing two abstract types type X = X|>:A<:B|
+        // we\'re comparing two abstract types type X = X|>:A<:B|
       // We know that the type is abstract if its name matches the type member's name
       ln == rn && compareBounds(ctx)(lref, rBounds)
     case (RefinementDecl.TypeMember(ln, lref), RefinementDecl.TypeMember(rn, rref)) =>
